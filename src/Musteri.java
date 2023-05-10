@@ -2,7 +2,7 @@ public class Musteri implements DataBase, Musteri_Islemleri {
 
     public void musteri(){
         System.out.println();
-        System.out.println( "************ MÜSTERI ISLEMLERI ************\n\n" +
+        System.out.println( "************ MÜSTERI ISLEMLERI ************\n" +
                             "1- Ürün Listeleme\n"+
                             "2- Ürün Satin Alma\n"+
                             "3- Ürun Arama\n"+
@@ -35,7 +35,7 @@ public class Musteri implements DataBase, Musteri_Islemleri {
                 giris();
                 break;
             default:
-                System.out.println("hatali tuslama yaptin tekrar dene");
+                System.out.println("Hatali Tuslama Yaptin Tekrar Dene");
                 musteri();
                 break;
         }
@@ -54,7 +54,7 @@ public class Musteri implements DataBase, Musteri_Islemleri {
     @Override
     public void urunSatinAlma() {
         urunListele();
-        System.out.println("hangi urunu almak istiyorsun id sini gir ");
+        System.out.println("Almak Istedigin Urunun Id sini Gir ");
         int secilenUrun= input.nextInt();
         boolean flag=true;
         for (PojoClass b:urun) {
@@ -65,20 +65,20 @@ public class Musteri implements DataBase, Musteri_Islemleri {
                 break;
             }
         }
-        if (flag) System.out.println("istenen urun bulunamadi");
+        if (flag) System.out.println("Istenen Urun Bulunamadi");
 
     }
 
     @Override
     public void urunArama() {
         urunListele();
-        System.out.println("aradigin urunun id sini listeden sec");
+        System.out.println("Aradigin Urunun Id sini Listeden Sec");
         int secim= input.nextInt();
         for (PojoClass e:urun) {
             if (e.getId()==secim){
-                System.out.println("aranan urun listede mevcut"+" "+e.getUrunIsmi()+" "+e.getRaf()+" numarali rafta");
+                System.out.println("Aranan Urun = "+" "+e.getUrunIsmi()+" "+e.getRaf()+" Numarali Rafta");
                 break;
-            }else System.out.println("aranan urun listede bulunamadi");
+            }else System.out.println("Aranan Urun Listede Bulunamadi");
             break;
         }
     }
